@@ -600,12 +600,12 @@ func (m *Meta) WorkspaceOverridden() (string, bool) {
 // SetWorkspace saves the given name as the current workspace in the local
 // filesystem.
 func (m *Meta) SetWorkspace(name string) error {
-	err := os.MkdirAll(m.DataDir(), 0755)
+	err := os.MkdirAll(m.DataDir(), 0777)
 	if err != nil {
 		return err
 	}
 
-	err = ioutil.WriteFile(filepath.Join(m.DataDir(), local.DefaultWorkspaceFile), []byte(name), 0644)
+	err = ioutil.WriteFile(filepath.Join(m.DataDir(), local.DefaultWorkspaceFile), []byte(name), 0666)
 	if err != nil {
 		return err
 	}

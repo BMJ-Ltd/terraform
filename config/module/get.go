@@ -48,7 +48,7 @@ func GetCopy(dst, src string) error {
 	}
 
 	// Make sure the destination exists
-	if err := os.MkdirAll(dst, 0755); err != nil {
+	if err := os.MkdirAll(dst, 0777); err != nil {
 		return err
 	}
 

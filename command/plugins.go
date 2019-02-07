@@ -136,9 +136,9 @@ func (m *Meta) storePluginPath(pluginPath []string) error {
 	}
 
 	// if this fails, so will WriteFile
-	os.MkdirAll(m.DataDir(), 0755)
+	os.MkdirAll(m.DataDir(), 0777)
 
-	return ioutil.WriteFile(path, js, 0644)
+	return ioutil.WriteFile(path, js, 0666)
 }
 
 // Load the user-defined plugin search path into Meta.pluginPath if the file

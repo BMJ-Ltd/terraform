@@ -138,7 +138,7 @@ func (s Storage) recordModule(rec moduleRecord) error {
 	}
 
 	manifestPath := filepath.Join(s.StorageDir, manifestName)
-	return ioutil.WriteFile(manifestPath, js, 0644)
+	return ioutil.WriteFile(manifestPath, js, 0666)
 }
 
 // load the manifest from dir, and return all module versions matching the

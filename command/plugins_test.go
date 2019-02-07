@@ -153,7 +153,7 @@ func (i *mockProviderInstaller) Get(provider string, req discovery.Constraints) 
 		return noMeta, fmt.Errorf("provider %q not found", provider)
 	}
 
-	err := os.MkdirAll(i.Dir, 0755)
+	err := os.MkdirAll(i.Dir, 0777)
 	if err != nil {
 		return noMeta, fmt.Errorf("error creating plugins directory: %s", err)
 	}
